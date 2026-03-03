@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crisis AI - Emergency Portal</title>
+    <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+    <div class="split-container">
+        
+        <div class="split-half public-side">
+    <div class="card">
+        <div class="badge-public" style="background: rgba(239, 68, 68, 0.2); color: #ef4444;">Emergency Beacon</div>
+        <h1>Send SOS</h1>
+        <p>Your signal will be sent directly to the Government Command Center.</p>
+        
+        <form id="sos-form">
+            <div class="input-group">
+                <label for="sos-location">Your Location</label>
+                <input type="text" id="sos-location" value="Vengadamangalam, Tamil Nadu" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="sos-message">Nature of Emergency</label>
+                <input type="text" id="sos-message" placeholder="e.g., Trapped in house, water rising rapidly" required>
+            </div>
+
+            <button type="submit" class="btn" style="background-color: #ef4444; color: white; height: 60px; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px;">
+                Transmit SOS
+            </button>
+        </form>
+        
+        <div id="sos-status-box" class="hidden" style="margin-top: 20px; padding: 15px; border-radius: 6px; text-align: center; font-weight: bold;"></div>
+    </div>
+</div>
+
+        <div class="split-half gov-side">
+            <div class="card gov-card">
+                <div class="badge-gov">Restricted Access</div>
+                <h1>Command Center Login</h1>
+                <p>Authorized personnel only. Access the AI Multi-Modal Fusion Dashboard.</p>
+                
+                <form id="gov-login-form">
+                    <div class="input-group">
+                        <label for="username">Official ID</label>
+                        <input type="text" id="username" placeholder="Enter Official ID" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="btn btn-gov">Access Dashboard</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    
+    <script src="landing.js"></script>
+    </body>
+</html>

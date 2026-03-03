@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Response AI Dashboard</title>
+
+    <!-- Leaflet Core -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Leaflet Routing Machine (IMPORTANT) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/script.js"></script>
+</head>
+
+<body>
+
+<header class="top-bar">
+    <h1 style="font-size: 28px; font-weight: 700;">
+        BEACON
+        <div style="font-size: 14px; font-weight: 400; color: #60a5fa; margin-top: 4px;">
+            Broad Emergency Alert & Coordination Network
+        </div>
+    </h1>
+    <div class="system-status normal">System Status: ACTIVE</div>
+</header>
+
+<main class="dashboard-grid">
+
+    <!-- LEFT PANEL -->
+    <section class="panel signals-panel">
+        <h2>1. Live Signals & NLP</h2>
+        <ul class="signal-list">
+            <li class="signal verified" style="color:#10b981;">
+                Waiting for live SOS signals...
+            </li>
+        </ul>
+    </section>
+
+    <!-- MAP PANEL -->
+    <section class="panel map-panel" style="position: relative; padding: 0; overflow: hidden;">
+        <div id="map" style="height: 100%; width: 100%; min-height: 500px; z-index: 1;"></div>
+
+        <div class="route-overlay" style="z-index: 1000;">
+            🚨 Waiting for active emergencies...
+        </div>
+
+        <button id="toggleDirectionsBtn"
+        style="
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            padding: 8px 14px;
+            background: #1e293b;
+            color: white;
+            border: 1px solid #38bdf8;
+            border-radius: 6px;
+            cursor: pointer;
+        ">
+    Show Directions
+</button>
+    </section>
+
+</main>
+
+<!-- Your Main Script -->
+<script src="script.js"></script>
+
+</body>
+</html>

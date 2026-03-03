@@ -1,0 +1,212 @@
+/* Base Variables & Reset */
+:root {
+    --bg-base: #0f172a;
+    --panel-bg: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent-blue: #38bdf8;
+    --danger-red: #ef4444;
+    --warn-yellow: #f59e0b;
+    --safe-green: #10b981;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-base);
+    color: var(--text-main);
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #334155;
+}
+
+.top-bar h1 {
+    font-size: 1.5rem;
+}
+
+.top-bar span {
+    color: var(--accent-blue);
+}
+
+/* Grid Layout */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 20px;
+    flex: 1;
+}
+
+/* Panels */
+.panel {
+    background-color: var(--panel-bg);
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid #334155;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel h2 {
+    font-size: 1.1rem;
+    color: var(--accent-blue);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Signals Panel */
+.signal-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.signal {
+    background: #0f172a;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    border-left: 4px solid transparent;
+}
+
+.signal.alert { border-color: var(--danger-red); }
+.signal.warning { border-color: var(--warn-yellow); }
+.signal.verified { border-color: var(--safe-green); }
+
+.badge {
+    display: inline-block;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-top: 8px;
+}
+.badge.danger { background: rgba(239, 68, 68, 0.2); color: var(--danger-red); }
+.badge.warn { background: rgba(245, 158, 11, 0.2); color: var(--warn-yellow); }
+.badge.safe { background: rgba(16, 185, 129, 0.2); color: var(--safe-green); }
+
+/* Map Panel */
+.map-placeholder {
+    flex: 1;
+    background: #0f172a;
+    border-radius: 6px;
+    border: 1px dashed #475569;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.route-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(30, 41, 59, 0.9);
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid var(--accent-blue);
+}
+
+.route-overlay p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+
+/* Reasoning Panel */
+.twin-card {
+    background: #0f172a;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid var(--danger-red);
+}
+
+.twin-card h3 {
+    color: var(--danger-red);
+    margin-bottom: 10px;
+}
+
+.metrics {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.metric span {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.metric .value {
+    font-size: 1.2rem;
+    color: var(--text-main);
+    font-weight: bold;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #334155;
+    margin: 15px 0;
+}
+
+.logic-trace {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #cbd5e1;
+    margin-bottom: 20px;
+}
+
+.action-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--danger-red);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.action-btn:hover {
+    background-color: #dc2626;
+}
+
+.leaflet-routing-container {
+    background: #ffffff !important;
+    color: #111827 !important;
+}
+
+.leaflet-routing-container * {
+    color: #111827 !important;
+}
+
+.leaflet-routing-alt {
+    background: #f9fafb !important;
+}
+
+.leaflet-routing-instructions {
+    color: #111827 !important;
+}
+
+.leaflet-routing-alt h2 {
+    color: #111827 !important;
+}
+}
